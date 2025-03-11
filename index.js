@@ -7,6 +7,7 @@ config()
 const getData = async () => {
     const response = await fetch('https://server-ava.onrender.com/api/v1/energy-stations')
     const data = await response.json()
+    
     return data.data
 }
 
@@ -62,7 +63,7 @@ bot.on('text', async msg => {
                 }
             })
         } else {           
-            const userParks = findParks(await getData(), userLocation)
+            const userParks = await findParks(await getData(), userLocation)
 
             if(userParks.length == 0) {
                 await bot.sendMessage(msg.chat.id, `🟥<b>Ближайщих к вам зарядных станций не найдено</b>🟥`, {

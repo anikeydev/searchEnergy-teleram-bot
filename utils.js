@@ -10,7 +10,7 @@ function compairCoordinates (coord1, coord2, radius = 0.03) {
     }
 }
 
-export function findParks(base, userCoordinates, radius) {
+export async function findParks(base, userCoordinates, radius) {
     const result = []
     base.map(item => {
         if (compairCoordinates(item.coordinates, userCoordinates, radius)) {
