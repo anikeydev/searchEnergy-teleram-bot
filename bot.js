@@ -64,7 +64,8 @@ export const startBot = () => {
                     }
                 })
             } else {           
-                const userParks = await findParks(await getData(), userLocation)
+                const data = await getData()
+                const userParks = await findParks(data, userLocation)
     
                 if(userParks.length == 0) {
                     await bot.sendMessage(msg.chat.id, `🟥<b>Ближайщих к вам зарядных станций не найдено</b>🟥`, {
