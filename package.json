@@ -2,7 +2,7 @@
   "name": "energysearch-telegram-bot",
   "version": "1.0.0",
   "type": "module",
-  "description": "This is easy telegram bot for serach energy stations in Moscow",
+  "description": "This is easy telegram bot for search energy stations in Moscow",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
