@@ -62,7 +62,7 @@ bot.on('text', async msg => {
                 }
             })
         } else {           
-            const userParks = findParks(getData(), userLocation)
+            const userParks = findParks(await getData(), userLocation)
 
             if(userParks.length == 0) {
                 await bot.sendMessage(msg.chat.id, `🟥<b>Ближайщих к вам зарядных станций не найдено</b>🟥`, {
