@@ -119,9 +119,7 @@ bot.on('location', async location => {
         userLocation.push(location.location.longitude)
     }
     catch(error) {
-
         console.log(error)
-
     }
 
 })
