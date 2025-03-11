@@ -10,8 +10,6 @@ const getData = async () => {
     return data.data
 }
 
-const data = await getData()
-
 const bot = new TelegramBot(process.env.API_KEY_BOT, {
 
     polling: {
@@ -64,7 +62,7 @@ bot.on('text', async msg => {
                 }
             })
         } else {           
-            const userParks = findParks(data, userLocation)
+            const userParks = findParks(getData(), userLocation)
 
             if(userParks.length == 0) {
                 await bot.sendMessage(msg.chat.id, `🟥<b>Ближайщих к вам зарядных станций не найдено</b>🟥`, {
