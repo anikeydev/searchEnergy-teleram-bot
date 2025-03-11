@@ -10,6 +10,8 @@ const getData = async () => {
     return data.data
 }
 
+const data = []
+
 const bot = new TelegramBot(process.env.API_KEY_BOT, {
 
     polling: {
@@ -61,8 +63,7 @@ bot.on('text', async msg => {
                     resize_keyboard: true
                 }
             })
-        } else {             
-            const data = await getData()
+        } else {           
             const userParks = findParks(data, userLocation)
 
             if(userParks.length == 0) {
@@ -113,7 +114,7 @@ bot.on('text', async msg => {
 })
 
 bot.on('location', async location => {
-
+    data = await getData()
     try {
         userLocation.push(location.location.latitude)
         userLocation.push(location.location.longitude)
