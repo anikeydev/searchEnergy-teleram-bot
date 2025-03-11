@@ -10,7 +10,7 @@ const getData = async () => {
     return data.data
 }
 
-const data = []
+const data = await getData()
 
 const bot = new TelegramBot(process.env.API_KEY_BOT, {
 
@@ -114,7 +114,6 @@ bot.on('text', async msg => {
 })
 
 bot.on('location', async location => {
-    data = await getData()
     try {
         userLocation.push(location.location.latitude)
         userLocation.push(location.location.longitude)
