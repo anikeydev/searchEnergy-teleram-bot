@@ -4,23 +4,19 @@ import { findParks } from './utils.js'
 
 config()
 
-const getData = async (req, res) => {
-  try {
-    const url = `https://apidata.mos.ru/v1/datasets/2985/features?api_key=${process.env.MOS_BASE_API_KEY}`
+const getData = async () => {
+  const url = `https://apidata.mos.ru/v1/datasets/2985/features?api_key=${process.env.MOS_BASE_API_KEY}`
 
-    const response = await fetch(url)
-    const data = await response.json()
-    const result = await data.features.map((item) => {
-      return {
-        name: item.properties.attributes.Name,
-        address: item.properties.attributes.Address,
-        coordinates: item.geometry.coordinates.reverse(),
-      }
-    })
-    return result
-  } catch {
-    console.log(res)
-  }
+  const response = await fetch(url)
+  const data = await response.json()
+  const result = data.features.map((item) => {
+    return {
+      name: item.properties.attributes.Name,
+      address: item.properties.attributes.Address,
+      coordinates: item.geometry.coordinates.reverse(),
+    }
+  })
+  return result
 }
 
 export const startBot = () => {
