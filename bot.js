@@ -1,25 +1,7 @@
 import TelegramBot from 'node-telegram-bot-api'
-import { config } from 'dotenv'
 import { findParks } from './utils.js'
 
-config()
-
-const getData = async () => {
-  const url = `https://apidata.mos.ru/v1/datasets/2985/features?api_key=${process.env.MOS_BASE_API_KEY}`
-
-  const response = await fetch(url)
-  const data = await response.json()
-  const result = data.features.map((item) => {
-    return {
-      name: item.properties.attributes.Name,
-      address: item.properties.attributes.Address,
-      coordinates: item.geometry.coordinates.reverse(),
-    }
-  })
-  return result
-}
-
-export const startBot = () => {
+export const startBot = (data) => {
   const bot = new TelegramBot(process.env.API_KEY_BOT, {
     polling: {
       interval: 300,
@@ -85,7 +67,6 @@ export const startBot = () => {
           },
         })
       } else {
-        const data = await getData()
         const userParks = await findParks(data, userLocation)
 
         if (userParks.length == 0) {
