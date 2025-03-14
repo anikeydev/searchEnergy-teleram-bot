@@ -10,7 +10,7 @@ const getData = async (req, res) => {
 
     const response = await fetch(url)
     const data = await response.json()
-    const result = data.features.map((item) => {
+    const result = await data.features.map((item) => {
       return {
         name: item.properties.attributes.Name,
         address: item.properties.attributes.Address,
