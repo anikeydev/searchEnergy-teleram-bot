@@ -1,7 +1,8 @@
 import TelegramBot from 'node-telegram-bot-api'
+import { getData } from './api.js'
 import { findParks } from './utils.js'
 
-export const startBot = (data) => {
+export const startBot = () => {
   const bot = new TelegramBot(process.env.API_KEY_BOT, {
     polling: {
       interval: 300,
@@ -36,8 +37,6 @@ export const startBot = (data) => {
 
   bot.setMyCommands(commands)
 
-  bot.on('polling_error', (err) => console.log(err))
-
   bot.on('text', async (msg) => {
     if (msg.text === '/start') {
       await bot.sendMessage(
@@ -67,6 +66,7 @@ export const startBot = (data) => {
           },
         })
       } else {
+        const data = await getData()
         const userParks = await findParks(data, userLocation)
 
         if (userParks.length == 0) {
