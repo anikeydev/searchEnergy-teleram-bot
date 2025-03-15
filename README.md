@@ -22,7 +22,7 @@
 
 ```bash
 git clone https://github.com/anikeydev/searchEnergy-teleram-bot.git
-cd searchEnergy-teleram-bo
+cd searchEnergy-teleram-bot
 ```
 
 ### 2️⃣ Установите зависимости:
