@@ -1,7 +1,5 @@
 # ⚡️ SearchEnergy Bot
 
-![GitHub License](https://img.shields.io/badge/license-MIT-green) ![GitHub Stars](https://img.shields.io/github/stars/anikeydev/searchEnergy-teleram-bot.git) ![GitHub Forks](https://img.shields.io/github/forks/anikeydev/searchEnergy-teleram-bot.git)
-
 ## 📌 Описание
 
 Простой телеграм-бот для поиска ближайших зарядных станций электромобилей в Москве. Помогает пользователю быстро найти доступную зарядку, используя актуальные данные.
