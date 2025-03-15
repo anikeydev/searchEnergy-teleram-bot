@@ -1,6 +1,6 @@
 # ⚡️ SearchEnergy Bot
 
-![GitHub License](https://img.shields.io/badge/license-MIT-green) ![GitHub Stars](https://img.shields.io/github/stars/anikeydev/electric-car-charger-bot) ![GitHub Forks](https://img.shields.io/github/forks/anikeydev/electric-car-charger-bot)
+![GitHub License](https://img.shields.io/badge/license-MIT-green) ![GitHub Stars](https://img.shields.io/github/stars/anikeydev/searchEnergy-teleram-bot.git) ![GitHub Forks](https://img.shields.io/github/forks/anikeydev/searchEnergy-teleram-bot.git)
 
 ## 📌 Описание
 
